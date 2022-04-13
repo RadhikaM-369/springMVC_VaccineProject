@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>welcome</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	 id="WebApp_ID" version="4.0">
+  <display-name>vaccine</display-name>
   <welcome-file-list>
     <welcome-file>Welcome.jsp</welcome-file>
   </welcome-file-list>
-  
-  
   <servlet>
-  <servlet-name>ds</servlet-name>
-  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  <load-on-startup>1</load-on-startup>
-  
-  <init-param> 
-  <param-name>contextConfigLocation</param-name>
-  <param-value>/WEB-INF/spring.xml</param-value>
-  </init-param>
+    <servlet-name>ds</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/spring.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
-    
-   <servlet-mapping>
-  <servlet-name>ds</servlet-name>
-  <url-pattern>/welcome</url-pattern>
+  <servlet-mapping>
+    <servlet-name>ds</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ds</servlet-name>
+    <url-pattern>/otp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ds</servlet-name>
+    <url-pattern>/vaccineHomepage</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
-  <servlet-name>ds</servlet-name>
-  <url-pattern>/otp</url-pattern>
-  </servlet-mapping>
+  
 </web-app>

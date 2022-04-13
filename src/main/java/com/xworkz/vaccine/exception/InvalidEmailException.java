@@ -1,4 +1,4 @@
-package com.xworkz.welcome.exception;
+package com.xworkz.vaccine.exception;
 
 
 @SuppressWarnings("serial")

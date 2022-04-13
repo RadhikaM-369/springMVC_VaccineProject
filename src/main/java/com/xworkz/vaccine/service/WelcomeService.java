@@ -1,4 +1,4 @@
-package com.xworkz.welcome.service;
+package com.xworkz.vaccine.service;
 
 public interface WelcomeService {
 public boolean validateEmail(String email);

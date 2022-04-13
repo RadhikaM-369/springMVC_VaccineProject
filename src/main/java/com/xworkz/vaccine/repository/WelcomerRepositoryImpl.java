@@ -1,10 +1,11 @@
-package com.xworkz.welcome.repository;
+package com.xworkz.vaccine.repository;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.xworkz.welcome.entity.WelcomeEntity;
+
+import com.xworkz.vaccine.entity.VaccineEntity;
 
 @Repository
 public class WelcomerRepositoryImpl implements WelcomeRepository {
@@ -16,7 +17,7 @@ public class WelcomerRepositoryImpl implements WelcomeRepository {
 	}
 
 	@Override
-	public boolean saveWelcomeEntity(WelcomeEntity welcomeEntity) {
+	public boolean saveWelcomeEntity(VaccineEntity welcomeEntity) {
 		System.out.println("Invoked saveWelcomeEntity()");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		try {

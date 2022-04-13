@@ -1,11 +1,11 @@
-package com.xworkz.welcome.service;
+package com.xworkz.vaccine.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
-import com.xworkz.welcome.entity.WelcomeEntity;
-import com.xworkz.welcome.exception.InvalidEmailException;
-import com.xworkz.welcome.repository.WelcomeRepository;
+import com.xworkz.vaccine.entity.VaccineEntity;
+import com.xworkz.vaccine.exception.InvalidEmailException;
+import com.xworkz.vaccine.repository.WelcomeRepository;
 
 @Service
 public class WelcomeServiceImpl implements WelcomeService{
@@ -18,49 +18,66 @@ public class WelcomeServiceImpl implements WelcomeService{
 		System.out.println(this.getClass().getSimpleName()+" bean created");
 	}
 
-	@SuppressWarnings("unused")
 	@Override
 	public boolean validateEmail(String email) throws InvalidEmailException {
-		boolean valid=false;
 		System.out.println("Invoked validateEmail()");
-		if(!email.isEmpty() || email!=null || email.length()>3 || email.length()<30 || 
-			email.contains("@")|| email.endsWith(".com")) {
-			valid=true;
+		try{
+			if(!email.isEmpty() && email!=null && email.length()>3 && email.length()<30 &&
+			email.contains("@")&& email.endsWith(".com")) {
 			System.out.println("Valid email");
+			return true;			
 		} else {
-			InvalidEmailException invalidEmail=new InvalidEmailException("Invalid email ..!");
-			throw invalidEmail;
+			throw new InvalidEmailException("Invalid email ..!");
+		}} catch(InvalidEmailException e) {
+			System.out.println("InvalidEmailException "+e);
 		}
-		return valid;
+		return false;
 	}
 
 	@Override
 	public boolean saveEmailAndOTP(String email,int otp) {
 		System.out.println("Invoked saveEmail()");
-		WelcomeEntity welcomeEntity=new WelcomeEntity();
+		try {
+		VaccineEntity welcomeEntity=new VaccineEntity();
 		welcomeEntity.setEmail(email);
 		welcomeEntity.setOtp(otp);
 		boolean isEntitySaved=welcomeRepo.saveWelcomeEntity(welcomeEntity);
-		return isEntitySaved;		
+		return isEntitySaved;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		return false;
 	}
 
 	@Override
 	public int get4DigitOTP() {
 		System.out.println("Invoked get4DigitOTP()");
+		try {
 		int randomOtp =(int) (Math.random()*9000)+1000;
 		System.out.println("OTP : "+randomOtp);
 		return randomOtp;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		return 0;
 	}
 
 	@Override
 	public boolean sendOtpToEmail(String email, int otp) {
 		System.out.println("Invoked sendOtpToEmail");
+		try {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(email);
-		message.setSubject("Task2-OTP ");
-		message.setText("Sending OTP- "+otp);
+		message.setSubject(" Vaccine OTP ");
+		message.setText("Vaccine OTP- "+otp+" recieved successfully.. ");
 		mailSender.send(message);
 		System.out.println("Simple mailMessage is sent");
 		return true;
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return false;
 	}
 }

@@ -13,8 +13,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
-</head>
-<style>
+</head><style>
+
 body {
   font-family: Arial;
   margin: 0;
@@ -22,40 +22,30 @@ body {
 }
 
 .header {
-  padding: 30px;
+  padding: 100px;
   background: #00008B;
   color: white;
  }
-
 .footer{
   padding: 100px;
   background: #00008B;
   color: white;
   }
- --Page Content 
+
 .content {padding:20px;}
 </style>
 
 <div class="header">
-  <h1>WELCOME</h1>
-  <p>Please provide the Information </p>
 </div>
-
 <body>
 
-<form action="welcome" method="post">
-<br><br><h1>${msg}</h1>
-<h2>${validOTPmsg}</h2>
-<h2>${verifiedOTPmsg1}</h2>
-<h2>${verifiedOTPmsg}</h2>
+<form action="vaccineHomepage" method="post">
 
-<div><label> Enter Email : </label> <input type="text" name="email"></div>
-<br><br>
-<div><input type="submit" class="btn btn-info" value="GET OTP"></div>
-<br><br>
+<h3>${verifiedOTPmsg}</h3>
+
 </form>
 </body>
-<div class="footer">  
-  <h6><i>created by:Radhika M. Magadum</i> </h6>
+
+<div class="footer">
 </div>
 </html>
