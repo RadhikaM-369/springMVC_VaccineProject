@@ -1,7 +1,10 @@
 package com.xworkz.vaccine.repository;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceException;
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -10,10 +13,10 @@ import com.xworkz.vaccine.entity.VaccineEntity;
 @Repository
 public class WelcomerRepositoryImpl implements WelcomeRepository {
 	@Autowired
-	private EntityManagerFactory entityManagerFactory;	
-	
+	private EntityManagerFactory entityManagerFactory;
+
 	public WelcomerRepositoryImpl() {
-		System.out.println(this.getClass().getSimpleName()+ "  Bean created");
+		System.out.println(this.getClass().getSimpleName() + "  Bean created");
 	}
 
 	@Override
@@ -36,6 +39,26 @@ public class WelcomerRepositoryImpl implements WelcomeRepository {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public String getEmailFromDB(String email) {
+		EntityManager entityManager = this.entityManagerFactory.createEntityManager();
+		System.out.println("Invoked getEmailFromDB");
+		String result = null;
+		try {
+			Query query = entityManager.createNamedQuery("getEmailFromDB");
+			query.setParameter("Email", email);
+			result = (String) query.getSingleResult();
+			return result;
+		} catch (Exception exception) {
+			System.out.println(exception);
+		} finally {
+			if (entityManager != null) {
+				entityManager.close();
+			}
+		}
+		return result;
 	}
 
 }

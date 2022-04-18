@@ -26,14 +26,15 @@ public class OtpServiceImpl implements OtpService {
 			} else {
 				throw new InvalidOtpException("Invalid OTP ..!");
 			}
-		} catch (InvalidOtpException e) {
-			System.out.println("Invalid Otp Exception" + e);
+		} catch (InvalidOtpException exception) {
+			System.out.println("Invalid Otp Exception" + exception);
 		}
 		return false;
 	}
 
 	@Override
-	public int verifyOtpFromDb(int otp) {
+	public boolean verifyOtpFromDb(int otp) {
+		boolean temp=false;
 		System.out.println("Invoked verifyOtpFromDb()");
 		try{
 		int vaccineOtpFromDb1=otpRepo.getOtpFromTable(otp);
@@ -42,7 +43,8 @@ public class OtpServiceImpl implements OtpService {
 		try {
 			if(otp==vaccineOtpFromDb1) {
 			System.out.println("Otp : "+otp+" is verified & matching with otp in DB "+vaccineOtpFromDb1);
-			return vaccineOtpFromDb1;
+			temp=true;
+			return temp;
 		}else {
 			throw new UnverifiedOtpException("Otp is not verified & matching with otp in DB");
 		}		
@@ -55,7 +57,7 @@ public class OtpServiceImpl implements OtpService {
 		}catch(UnverifiedOtpException e) {
 			System.out.println("OTP IS NOT FOUND...!  "+e);
 		}
-		return 0;
+		return temp;
 		}
 }
 

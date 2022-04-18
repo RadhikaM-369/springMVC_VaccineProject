@@ -4,4 +4,5 @@ import com.xworkz.vaccine.entity.VaccineEntity;
 
 public interface WelcomeRepository {
 boolean saveWelcomeEntity(VaccineEntity welcomeEntity); 
+String getEmailFromDB(String email);
 }

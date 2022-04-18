@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 public interface OtpService {
 	boolean validateOTP(int otp);
 
-	int verifyOtpFromDb(int otp);
+	boolean verifyOtpFromDb(int otp);
 }

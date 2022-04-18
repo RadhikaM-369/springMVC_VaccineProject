@@ -17,8 +17,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "welcome_info")
 @NamedQueries({
-	@NamedQuery(name = "getOtpFromTableByEmail", 
-			   query = "select vaccine.otp from VaccineEntity as vaccine where vaccine.otp=:OTP")
+	@NamedQuery(name = "getOtpFromTable", 
+			   query = "select vaccine.otp from VaccineEntity as vaccine where vaccine.otp=:OTP"),
+	@NamedQuery(name = "getEmailFromDB", 
+	   			query = "select vaccine.email from VaccineEntity as vaccine where vaccine.email=:Email")
 })
 
 public class VaccineEntity {
