@@ -47,11 +47,15 @@
          background: #828b00;
             color: white;
             }
+            
+        .Content{
+            padding: 90px;
+            }
     </style>
 </head>
 <body>
-	<div class="card-header">header</div>	
-	<div class="card " style="width: 25rem;">
+	<div class="card-header">Vaccine Information</div>	
+	<div class="card" style="width: 60rem;">
 		<div class="card-body">
 			<h5 class="card-title">WELCOME</h5>
 

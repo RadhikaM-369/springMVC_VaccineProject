@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.xworkz.vaccine.entity.VaccineEntity;
+import com.xworkz.vaccine.exception.EmailIdNotPresentException;
 
 @Repository
 public class WelcomerRepositoryImpl implements WelcomeRepository {
@@ -20,12 +21,12 @@ public class WelcomerRepositoryImpl implements WelcomeRepository {
 	}
 
 	@Override
-	public boolean saveWelcomeEntity(VaccineEntity welcomeEntity) {
-		System.out.println("Invoked saveWelcomeEntity()");
+	public boolean saveWelcomeEntity(VaccineEntity vaccineEntity) {
+		System.out.println("Invoked saveWelcomeEntity");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		try {
 			entityManager.getTransaction().begin();
-			entityManager.persist(welcomeEntity);
+			entityManager.persist(vaccineEntity);
 			entityManager.getTransaction().commit();
 			return true;
 		} catch (PersistenceException e) {
@@ -45,20 +46,14 @@ public class WelcomerRepositoryImpl implements WelcomeRepository {
 	public String getEmailFromDB(String email) {
 		EntityManager entityManager = this.entityManagerFactory.createEntityManager();
 		System.out.println("Invoked getEmailFromDB");
-		String result = null;
-		try {
-			Query query = entityManager.createNamedQuery("getEmailFromDB");
+			try {	
+			Query query=entityManager.createNamedQuery("getEmailFromDB");
 			query.setParameter("Email", email);
-			result = (String) query.getSingleResult();
-			return result;
-		} catch (Exception exception) {
-			System.out.println(exception);
-		} finally {
-			if (entityManager != null) {
-				entityManager.close();
+			return (String) query.getSingleResult();
+			}catch(Exception exception) {
+				
 			}
+			return null;
 		}
-		return result;
-	}
-
 }
+

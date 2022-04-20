@@ -17,7 +17,7 @@ public class OtpRepositoryImpl implements OtpRepository {
 	public int getOtpFromTable(int otp) {
 		EntityManager entityManager = this.entityManagerFactory.createEntityManager();
 		try {
-			Query query = entityManager.createNamedQuery("getOtpFromTableByEmail");
+			Query query = entityManager.createNamedQuery("getOtpFromTable");
 			query.setParameter("OTP", otp);			
 			return  (int) query.getSingleResult();
 		} catch(Exception e){

@@ -38,26 +38,36 @@ public class OtpServiceImpl implements OtpService {
 		System.out.println("Invoked verifyOtpFromDb()");
 		try{
 		int vaccineOtpFromDb1=otpRepo.getOtpFromTable(otp);
-		if(vaccineOtpFromDb1!=0) {
-		System.out.println("Got Otp from getOtpFromTableByEmail-"+vaccineOtpFromDb1);		
-		try {
-			if(otp==vaccineOtpFromDb1) {
-			System.out.println("Otp : "+otp+" is verified & matching with otp in DB "+vaccineOtpFromDb1);
-			temp=true;
-			return temp;
+		if(otp==vaccineOtpFromDb1) {
+			System.out.println("OTP verified");
+		temp=true;	
+		return temp;
 		}else {
-			throw new UnverifiedOtpException("Otp is not verified & matching with otp in DB");
-		}		
-		} catch(UnverifiedOtpException e) {
-			System.out.println("Otp is not verified & matching with otp in DB "+e);
-		}
-		}else {
-			throw new UnverifiedOtpException("OTP IS NOT FOUND");
-		}
-		}catch(UnverifiedOtpException e) {
-			System.out.println("OTP IS NOT FOUND...!  "+e);
+			throw new UnverifiedOtpException("OTP not verified");
+		}}catch(UnverifiedOtpException unverifiedOtpException) {
+			System.out.println(unverifiedOtpException);
 		}
 		return temp;
 		}
 }
 
+	
+	/*if(vaccineOtpFromDb1!=0) {
+	System.out.println("Got Otp from getOtpFromTableByEmail-"+vaccineOtpFromDb1);		
+	try {
+		if(otp==vaccineOtpFromDb1) {
+		System.out.println("Otp : "+otp+" is verified & matching with otp in DB "+vaccineOtpFromDb1);
+		temp=true;
+		return temp;
+	}else {
+		throw new UnverifiedOtpException("Otp is not verified & matching with otp in DB");
+	}		
+	} catch(UnverifiedOtpException e) {
+		System.out.println("Otp is not verified & matching with otp in DB "+e);
+	}
+	}else {
+		throw new UnverifiedOtpException("OTP IS NOT FOUND");
+	}
+	}catch(UnverifiedOtpException e) {
+		System.out.println("OTP IS NOT FOUND...!  "+e);
+	}*/

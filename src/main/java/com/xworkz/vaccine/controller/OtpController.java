@@ -29,18 +29,18 @@ public class OtpController {
 			boolean isOtpVerified = otpService.verifyOtpFromDb(otp);
 			if (isOtpVerified) {
 				System.out.println("verifiedOTP is matched uiOTP");
-				model.addAttribute("verifiedOTPmsg", "OTP is verified..!");
-				return "/WEB-INF/files/VaccineHomePage.jsp";
+				//model.addAttribute("verifiedOTPmsg", "OTP is verified..!");
+				return "/WEB-INF/jspPages/VaccineHomePage.jsp";
 			} else {
 				System.out.println("verifiedOTP is not matching with uiOTP");
 				model.addAttribute("verifiedOTPmsg", "OTP is not varified or not matching");
-				return "/WEB-INF/files/Otp.jsp";
+				return "/WEB-INF/jspPages/Otp.jsp";
 			}
 		} else {
 			System.out.println("OTP Is inValid" + otp);
 			model.addAttribute("validOTPmsg", "OTP - " + otp + " is inValid");
 		}
-		return "/WEB-INF/files/Otp.jsp";
+		return "/WEB-INF/jspPages/Otp.jsp";
 	}
 }
 
