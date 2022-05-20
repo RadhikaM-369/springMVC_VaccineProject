@@ -1,5 +1,10 @@
 package com.xworkz.vaccine.controller;
 
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,16 +16,28 @@ import com.xworkz.vaccine.service.WelcomeServiceImpl;
 @Controller
 @RequestMapping("/")
 public class WelcomeController {
+	public static String email;
 	@Autowired
 	private WelcomeServiceImpl welcomeService;
 
 	public WelcomeController() {
 		System.out.println(this.getClass().getSimpleName() + " bean created");
 	}
-
+		
+	@RequestMapping("register")
+	public String onClickReisterLink() {
+		System.out.println("Invoked onClickReisterLink");
+		return "/WEB-INF/jspPages/Register.jsp";		
+	}
 	@RequestMapping("welcome")
-	public String onGetOtpClicked(@RequestParam String email, Model model) {
+	public String onGetOtpClicked( HttpServletRequest request, HttpServletRequest response,
+		@RequestParam String email, Model model) {
 		System.out.println("invoked onGetOtpClicked ");
+		
+		HttpSession session=request.getSession();
+		session.setAttribute("email",email);
+		
+		WelcomeController.email=email;
 		boolean isEmailValid = welcomeService.validateEmail(email);
 		if (isEmailValid) {
 			System.out.println(" Email Id Validation : " + isEmailValid);
@@ -66,15 +83,4 @@ public class WelcomeController {
 	}
 }
 
-/*
- * else {
- * model.addAttribute("msg","Sorry..!! cannot send the OTP to the same emailId "
- * +email+" please try with different emailId.. THANK YOU");
- * System.out.println("cannot send OTP to the same EmailId again: "+email); }
- * return "Welcome.jsp"; }
- * 
- * 
- * /*
- * 
- * 
- */
+

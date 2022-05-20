@@ -19,6 +19,12 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/javax.servlet/servlet-api/3.0-alpha-1/7b491267924e8c81f4f9378caba0ee03423948ca/servlet-api-3.0-alpha-1.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/javax.servlet/servlet-api/3.0-alpha-1/8b1dcbc2dc5d789ba793af327e3d10bfd51e8814/servlet-api-3.0-alpha-1-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.15/28307dda4cb5fbeb6f7d7e7c846f464da0eba955/spring-webmvc-5.3.15.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.15/7731282caba946d98cfbcc5b176d668e12d0b81d/spring-webmvc-5.3.15-sources.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -26,6 +32,24 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/5.3.15/8e0326503c9f83fc447c00818212edc246daa455/spring-context-support-5.3.15.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/5.3.15/ab00e7521ebafaae97e262cc32a9aabe2d083f7c/spring-context-support-5.3.15-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/5.6.1/7c2a899cfa8c986170721fedf356a73f73ddcb23/spring-security-web-5.6.1.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/5.6.1/d0c25965b5eded3c3647521b9767784efcb5ee97/spring-security-web-5.6.1-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/5.6.1/9dad5eb59d37caddfa90752e034541ecd0ca9632/spring-security-config-5.6.1.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/5.6.1/cc4bdf9011e3dfd4fbaba029bc35cfa9b716ef1c/spring-security-config-5.6.1-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.6.1/f8d2fc6d172264946f909d1b61ce8a18b50d655f/spring-security-core-5.6.1.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.6.1/55e1878f35ba0b7afb4052250a913fdb2a790f8a/spring-security-core-5.6.1-sources.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -68,6 +92,18 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/com.sun.mail/javax.mail/1.5.6/ab5daef2f881c42c8e280cbe918ec4d7fdfd7efe/javax.mail-1.5.6.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/com.sun.mail/javax.mail/1.5.6/7a9a2f66d64bed834a9090c4e91e78892e2e67a1/javax.mail-1.5.6-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.4/f95188e3d372e20e7328706c37ef366e5d7859b0/commons-fileupload-1.4.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.4/d50ee98902746c6a351662fa8b728189d1a30e90/commons-fileupload-1.4-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.11.0/a2503f302b11ebde7ebc3df41daebe0e4eea3689/commons-io-2.11.0.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.11.0/2ef0187124bbfc7aed3038d4ffdd2241e8992937/commons-io-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -188,6 +224,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/3697e9f67a2ed7ac5f589cff30f21173299440/activation-1.1-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/5.6.1/b9dc3cc09643c0451a35bdc9327e80c4f5dfd354/spring-security-crypto-5.6.1.jar" sourcepath="C:/Users/Admin/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/5.6.1/4f560c4d7dca26377a01621f6fb5b541b7b313ed/spring-security-crypto-5.6.1-sources.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>

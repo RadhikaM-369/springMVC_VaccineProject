@@ -1,8 +1,11 @@
 package com.xworkz.vaccine.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.xworkz.vaccine.controller.WelcomeController;
 import com.xworkz.vaccine.dto.AddMemberDto;
 import com.xworkz.vaccine.entity.AddMemberEntity;
 import com.xworkz.vaccine.exception.InvalidDoseException;
@@ -13,11 +16,14 @@ import com.xworkz.vaccine.exception.InvalidNameException;
 import com.xworkz.vaccine.exception.InvalidVaccineTypeException;
 import com.xworkz.vaccine.exception.InvalidYOBException;
 import com.xworkz.vaccine.repository.AddMemberRepositoryImpl;
+import com.xworkz.vaccine.repository.WelcomerRepositoryImpl;
 
 @Service
 public class AddMemberServiceImpl implements AddMemberService {
 	@Autowired
 	private AddMemberRepositoryImpl addMemberRepo;
+	@Autowired
+	private WelcomerRepositoryImpl welcomeRepo;
 
 	@Override
 	public boolean validateAddMemberDto(AddMemberDto addMemberDto) throws InvalidNameException {
@@ -84,11 +90,38 @@ public class AddMemberServiceImpl implements AddMemberService {
 		try {
 			AddMemberEntity addMemberEntity = new AddMemberEntity();
 			BeanUtils.copyProperties(addMemberDto, addMemberEntity);
+			//VaccineEntity vaccineEntity =new VaccineEntity();
+			int memberCount1=welcomeRepo.getMemberCountFromDB(WelcomeController.email);
+			System.out.println(" Membercount from getMemberCountFromDB- "+memberCount1);
+			if(memberCount1>=4) {
+				System.out.println("Cannot add more than 4 members");
+				return false;
+			}else {			
 			boolean isEntitySaved = addMemberRepo.saveAddMemberEntity(addMemberEntity);
+			memberCount1++;
+			welcomeRepo.updateMemberCount(WelcomeController.email,memberCount1);
+			isEntitySaved=true;
 			return isEntitySaved;
+			}
 		} catch (Exception exception) {
 			System.out.println(exception);
 		}
 		return false;
 	}
+	@Override
+	public List<Object> getAllMemberData() {
+		System.out.println("Invoked getAllMemberData");
+		List<Object> addMembers=null;
+		try {
+		List<AddMemberEntity> addMemberEntity=this.addMemberRepo.getAllMemberDataFromDB();
+		if(addMemberEntity!=null) {
+			return addMembers=new ArrayList<Object>(addMemberEntity);
+		}
+		//return addMembers;
+		}
+		catch(Exception exception) {
+		System.out.println(exception);
+		}
+		return addMembers;
+}
 }

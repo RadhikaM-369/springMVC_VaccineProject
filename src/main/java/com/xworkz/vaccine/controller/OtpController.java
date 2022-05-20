@@ -1,11 +1,15 @@
 package com.xworkz.vaccine.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.xworkz.vaccine.repository.AddMemberRepositoryImpl;
+import com.xworkz.vaccine.service.AddMemberServiceImpl;
 import com.xworkz.vaccine.service.OtpServiceImpl;
 
 @Controller
@@ -13,6 +17,8 @@ import com.xworkz.vaccine.service.OtpServiceImpl;
 public class OtpController {
 	@Autowired
 	private OtpServiceImpl otpService;
+	@Autowired
+	private AddMemberServiceImpl addMemberService;
 
 	public OtpController() {
 		System.out.println(this.getClass().getSimpleName() + " bean invoked");
@@ -29,8 +35,12 @@ public class OtpController {
 			boolean isOtpVerified = otpService.verifyOtpFromDb(otp);
 			if (isOtpVerified) {
 				System.out.println("verifiedOTP is matched uiOTP");
+				
+				List<Object> allMembers=addMemberService.getAllMemberData();
+				model.addAttribute("ListOfAllMembers", allMembers);
 				//model.addAttribute("verifiedOTPmsg", "OTP is verified..!");
 				return "/WEB-INF/jspPages/VaccineHomePage.jsp";
+				
 			} else {
 				System.out.println("verifiedOTP is not matching with uiOTP");
 				model.addAttribute("verifiedOTPmsg", "OTP is not varified or not matching");

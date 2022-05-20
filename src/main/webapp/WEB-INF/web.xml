@@ -32,4 +32,36 @@
 		<servlet-name>ds</servlet-name>
 		<url-pattern>/addMember</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ds</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/registerPage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/getLoginPage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/getAllAddMembers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/reset</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/resetPassword</url-pattern>
+	</servlet-mapping>
 </web-app>

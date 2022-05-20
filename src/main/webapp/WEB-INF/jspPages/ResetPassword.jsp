@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,16 +47,18 @@
         }
         
         .card-header {
-            padding: 30px;
+            padding: 50px;
             background: #828b00;
             color: white;
          }
         
         .card-footer {
-            padding: 60px;
+            padding: 50px;
             background: #828b00;
             color: white;
-           
+            position: absolute;
+            width:100%;
+            bottom:0;
         }
         .button{
          background: #828b00;
@@ -68,26 +71,22 @@
     </style>
 </head>
 <body>
-	<div class="card-header"><h1>Vaccine Information</h1><br>
+	<div class="card-header"><h1>Reset your password here</h1><br>
 	<div class="d-grid gap-2 d-md-flex justify-content-end">
-	<a class="btn btn-primary" href="getLoginPage"><h3>LOGIN</h3></a>
-	<a class="btn btn-primary" href="register" class="button" role="button" ><h3>Register</h3></a></div>
+	</div>
 	</div>	
-	<div class="card" style="width: 70rem; height:35rem;">
+	<div class="card" style="width: 70rem; height:40rem;">
 		<div class="card-body">
-			<h1 class="card-title">WELCOME</h1>
-			<form action="welcome" >
-				<br> <br>
-				<h1>${msg}</h1>
-				<h2>${validOTPmsg}</h2>
-				<h2>${verifiedOTPmsg1}</h2>
-				<h2>${verifiedOTPmsg}</h2>
-
-				<label><h3>Enter Email-Id</h3></label> <input type="email" name="email" class="form-control"><br> <br>
-				
-				 <input	class="btn btn-primary btn-lg" type="submit" value="GET OTP" >
-			</form>
-		</div>
+			<h1 class="card-title"></h1>
+	<form action="reset" >
+	<br> <br>
+	<h1>${confirmpassword}</h1>
+	<div><label><h3>Enter Email-Id</h3></label> <input type="email" name="email" class="form-control"></div><br> 
+	<div><label><h3>Enter new password</h3></label> <input type="password" name="newPassword" class="form-control"></div><br>
+	<div><label><h3>Enter confirm password</h3></label> <input type="password" name="confirmPassword" class="form-control"></div><br><br>
+	<div><input	class="btn btn-primary btn-lg" type="submit" value="RESET PASSWORD" ></div>
+	</form>
+	</div>
 	</div>
 
 	<div class="card-footer"><i>created by:Radhika M. Magadum</i></div>

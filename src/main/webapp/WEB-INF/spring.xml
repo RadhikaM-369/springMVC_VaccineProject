@@ -23,12 +23,13 @@
 		</props>
 		</property>
 	 </bean>
-	 
+	 <bean class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	
 	  <bean id="localContainerEntityManagerFactoryBean"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="driverManagerDataSource"></property>
 	</bean>
-			
+	
 	<bean id="driverManagerDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<constructor-arg value="${jdbc.url}"></constructor-arg>

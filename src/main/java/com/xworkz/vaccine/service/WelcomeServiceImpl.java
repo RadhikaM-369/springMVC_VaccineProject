@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
-
 import com.xworkz.vaccine.entity.VaccineEntity;
 import com.xworkz.vaccine.exception.InvalidEmailException;
 import com.xworkz.vaccine.exception.UnverifiedEmailException;
@@ -65,10 +64,11 @@ public class WelcomeServiceImpl implements WelcomeService {
 			VaccineEntity welcomeEntity = new VaccineEntity();
 			welcomeEntity.setEmail(email);
 			welcomeEntity.setOtp(otp);
+			welcomeEntity.setMemberCount(0);
 			boolean isEntitySaved = welcomeRepo.saveWelcomeEntity(welcomeEntity);
 			return isEntitySaved;
-		} catch (Exception e) {
-			System.out.println(e);
+		} catch (Exception exception) {
+			System.out.println(exception);
 		}
 		return false;
 	}
@@ -97,8 +97,8 @@ public class WelcomeServiceImpl implements WelcomeService {
 			mailSender.send(message);
 			System.out.println("Simple mailMessage is sent");
 			return true;
-		} catch (Exception e) {
-			System.out.println(e);
+		} catch (Exception exception) {
+			System.out.println(exception);
 		}
 		return false;
 	}

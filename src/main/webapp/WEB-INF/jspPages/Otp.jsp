@@ -54,11 +54,12 @@ body {
 </style>
 </head>
 <body>
-<div class="card-header">Vaccine Information</div>	
-	<div class="card" style="width: 60rem;">
+<div class="card-header"><h1>Vaccine Information</h1>
+</div>	
+	<div class="card" style="width: 70rem;height:40rem">
 		<div class="card-body">
 			<h3 class="card-title"> Please provide information</h3>
-	<form action="otp" method="post">
+	<form action="otp" >
 		<br> <br>
 		<h3>${verifiedOTPmsg}</h3>
 		<h2>This Is OTP Page</h2>
@@ -68,7 +69,7 @@ body {
 		</div>
 		<br><br>
 		<div>
-			<input	type="submit" value="GET OTP" class="button">
+			<input	class="btn btn-primary btn-lg" type="submit" value="GET OTP" >
 		</div>
 	</form>
 	</div>

@@ -33,7 +33,21 @@ implementation group: 'org.springframework', name: 'spring-context-support', ver
 // https://mvnrepository.com/artifact/com.sun.mail/javax.mail
 implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.5.6'
 
+// https://mvnrepository.com/artifact/commons-io/commons-io
+implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
 
+// https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
+
+// https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
+implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.6.1'
+// https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
+implementation group: 'org.springframework.security', name: 'spring-security-web', version: '5.6.1'
+// https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
+implementation group: 'org.springframework.security', name: 'spring-security-config', version: '5.6.1'
+
+// https://mvnrepository.com/artifact/javax.servlet/servlet-api
+compileOnly group: 'javax.servlet', name: 'servlet-api', version: '3.0-alpha-1'
 }
 
 

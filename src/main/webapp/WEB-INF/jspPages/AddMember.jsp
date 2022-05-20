@@ -51,15 +51,32 @@ body {
 .Content{
             padding: 90px;
           }
+          table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
 </style>
 </head>
 
 <body>
 	<div class="card-header">Vaccine Information</div>
-	<div class="card" style="width: 60rem;">
+	<div class="card" style="width:70rem; height:40rem;">
 	<div class="card-body">
 	<h3 class="card-title">Register</h3>
+	<h3>${msg}</h3>
 	<form action="addMember" method="post">
+	
 	<div>
 	<br>
 	<h2>Your PHOTO ID will be verified at the time of your vaccination appointment..!</h2>
@@ -100,8 +117,10 @@ body {
 	<option value="dose2">Dose 2</option>
 	</select></td>
   </tr>
-  <tr><td><input type="submit" value="ADD MEMBER" class="button"> </td></tr>
-	</table>
+ </table>
+  <div class="d-flex justify-content-center">
+  <input class="btn btn-primary btn-lg" type="submit" value="ADD MEMBER" > 
+  </div>
 	</form>
 	</div>
 	</div>
