@@ -78,7 +78,7 @@
 	<div class="card" style="width: 70rem; height:40rem;">
 		<div class="card-body">
 			<h1 class="card-title"></h1>
-	<form action="reset" >
+	<form action="reset" method="post">
 	<br> <br>
 	<h1>${confirmpassword}</h1>
 	<div><label><h3>Enter Email-Id</h3></label> <input type="email" name="email" class="form-control"></div><br> 

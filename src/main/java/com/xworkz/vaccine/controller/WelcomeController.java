@@ -24,12 +24,13 @@ public class WelcomeController {
 		System.out.println(this.getClass().getSimpleName() + " bean created");
 	}
 		
-	@RequestMapping("register")
+	@RequestMapping("/register")
 	public String onClickReisterLink() {
 		System.out.println("Invoked onClickReisterLink");
 		return "/WEB-INF/jspPages/Register.jsp";		
 	}
-	@RequestMapping("welcome")
+	
+	@RequestMapping("/welcome")
 	public String onGetOtpClicked( HttpServletRequest request, HttpServletRequest response,
 		@RequestParam String email, Model model) {
 		System.out.println("invoked onGetOtpClicked ");

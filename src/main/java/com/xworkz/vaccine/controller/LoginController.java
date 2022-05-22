@@ -1,6 +1,9 @@
 package com.xworkz.vaccine.controller;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,17 +30,15 @@ public class LoginController {
 		
 		return "/WEB-INF/jspPages/ResetPassword.jsp";
 	}
-	
-	@RequestMapping("/getLoginPage")
-	public String getLoginPage() {
 		
-		return "/WEB-INF/jspPages/Login.jsp";
-	}
-	
 	@RequestMapping("/login")
-	public String onClickLogin(@RequestParam String userName,@RequestParam String pswd,Model model) {
-		boolean isValidateLogin = loginService.validateLoginInfo(userName, pswd);
-
+	public String onClickLogin(@RequestParam String userName,@RequestParam String pswd,Model model,
+			HttpServletRequest request, HttpServletRequest response) {
+		boolean isValidateLogin = loginService.validateLoginInfo(userName, pswd);		
+		
+		HttpSession session=request.getSession();
+		session.setAttribute("userName", userName);
+		
 		if (isValidateLogin) {
 			System.out.println("Login Information is valid :" + isValidateLogin);
 			boolean isCredentialUser = loginService.decodePasswordAndCompare(pswd, userName);

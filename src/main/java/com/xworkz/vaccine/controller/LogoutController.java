@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class LogoutController extends HttpServlet {
-	//private static String email;
+	
 	public LogoutController() {
 		System.out.println(this.getClass().getSimpleName()+"bean created");
 	}
@@ -20,15 +20,20 @@ public class LogoutController extends HttpServlet {
 	@RequestMapping("/logout")
 	   public void onClickLogout(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
-		//WelcomeController.email=email;
 		HttpSession session=request.getSession();
 		session.removeAttribute("email");
+		session.removeAttribute("userName");
 		session.invalidate();
 		response.sendRedirect("Welcome.jsp");
 	}
+	
 }
  
-
+/*
+   response.setHeader("Pragma","no-cache");
+    response.setDateHeader ("Expires", 0);
+    session.invalidate();
+ */
 
 /*
  protected void doGet(HttpServletRequest request, HttpServletResponse response)

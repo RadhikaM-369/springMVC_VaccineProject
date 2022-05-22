@@ -54,12 +54,19 @@ body {
 </style>
 </head>
 <body>
+
+<%
+    response.setHeader("Cache-Control","no-cache, no-store,must-revalidate");
+  	if(session.getAttribute("email")==null)
+  		response.sendRedirect("Welcome.jsp");
+%>
+
 <div class="card-header"><h1>Vaccine Information</h1>
 </div>	
 	<div class="card" style="width: 70rem;height:40rem">
 		<div class="card-body">
 			<h3 class="card-title"> Please provide information</h3>
-	<form action="otp" >
+	<form action="otp" method="post">
 		<br> <br>
 		<h3>${verifiedOTPmsg}</h3>
 		<h2>This Is OTP Page</h2>

@@ -64,4 +64,9 @@
 	<servlet-name>ds</servlet-name>
 		<url-pattern>/resetPassword</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ds</servlet-name>
+		<url-pattern>/logoutFromLogin</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

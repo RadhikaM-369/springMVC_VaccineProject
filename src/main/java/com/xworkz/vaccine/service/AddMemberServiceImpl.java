@@ -76,7 +76,7 @@ public class AddMemberServiceImpl implements AddMemberService {
 		if (addMemberDto.getGender() != null && !addMemberDto.getGender().isEmpty()) {
 			temp = true;
 			System.out.println("Valid Gender");
-
+			
 		} else {
 			InvalidGenderException invalidGenderException = new InvalidGenderException("Invalid Gender");
 			throw invalidGenderException;

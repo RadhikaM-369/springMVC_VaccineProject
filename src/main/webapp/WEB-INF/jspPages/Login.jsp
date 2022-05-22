@@ -79,7 +79,8 @@ tr:nth-child(even) {
 	</div>
 	<div class="card" style="width: 70rem; height: 40rem;">
 		<div class="card-body">
-			<h1 class="card-title">WELCOME</h1>
+			<h1 class="card-title"></h1>
+						
 			<form action="login" method="post">
 				<br>
 				<h3>${regStatus}</h3>
@@ -107,7 +108,7 @@ tr:nth-child(even) {
 				<br>
 				<br>
 				<div>
-					<input class="btn btn-primary" type="submit" value="LOGIN" />
+				<input class="btn btn-primary" type="submit" value="LOGIN" />
 				</div>
 <br>
 				<br>

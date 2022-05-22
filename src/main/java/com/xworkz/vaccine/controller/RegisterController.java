@@ -18,6 +18,12 @@ public class RegisterController {
 		System.out.println(this.getClass().getSimpleName()+" Bean created");
 	}
 	
+	@RequestMapping("/getLoginPage")
+	public String getLoginPage() {
+		
+		return "/WEB-INF/jspPages/Login.jsp";
+	}
+	
 	@RequestMapping("/registerPage")
 	public String onClickRegister(@RequestParam String userName,@RequestParam String pswd,@RequestParam String emailId,
 			@RequestParam String genderR, @RequestParam long mobileNo,@RequestParam String userDob,Model model){

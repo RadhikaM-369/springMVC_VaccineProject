@@ -70,7 +70,20 @@ tr:nth-child(even) {
 </head>
 
 <body>
-	<div class="card-header">Vaccine Information</div>
+
+<%
+    response.setHeader("Cache-Control","no-cache, no-store,must-revalidate");
+  	if(session.getAttribute("email")==null){
+  	if(session.getAttribute("userName")==null){  	
+  		response.sendRedirect("Welcome.jsp");}
+  	}  	
+%>
+
+	<div class="card-header"><h1>Vaccine Information</h1></div>	
+	<div class="d-grid gap-2 d-md-flex justify-content-end">
+	<a href="<c:url value='/logout'/>" class="btn btn-primary btn-lg" role="button" ><h3>LOG OUT</h3></a>
+	</div>
+	
 	<div class="card" style="width:70rem; height:40rem;">
 	<div class="card-body">
 	<h3 class="card-title">Register</h3>
@@ -124,22 +137,6 @@ tr:nth-child(even) {
 	</form>
 	</div>
 	</div>
+	<div class="card-footer">created by:Radhika M. Magadum</div>
 </body>
 </html>
-
-
-
-<!-- 
-	<div class="form-check">
-	<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 
-	<label class="form-check-label" for="flexRadioDefault1"> FEMALE</label>
-	</div>
-	<div class="form-check">
-	<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked> 
-	<label class="form-check-label" for="flexRadioDefault2"> MALE </label>
-	</div>
-	<div class="form-check">
-	<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" > 
-	<label class="form-check-label" for="flexRadioDefault2"> OTHER </label>
-	</div>
-	</div> -->

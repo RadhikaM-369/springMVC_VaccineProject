@@ -73,15 +73,20 @@ tr:nth-child(even) {
 	background-color: #dddddd;
 }
 </style>
-<%
-    response.setHeader("Cache-Control","no-cache, no-store,must-revalidate");
-    response.setHeader("Pragma","no-cache");
-    response.setDateHeader ("Expires", 0);
-    session.invalidate();
-%>
+
 </head>
 
 <body>
+<%
+    response.setHeader("Cache-Control","no-cache, no-store,must-revalidate");
+  	if(session.getAttribute("email")==null){
+  	if(session.getAttribute("userName")==null){
+  	
+  		response.sendRedirect("Welcome.jsp");}
+  	}
+  	
+%>
+
 	<div class="card-header"><h1>Vaccine Information</h1> </div>
 	<div class="d-grid gap-2 d-md-flex justify-content-end">
 	<a href="<c:url value='/logout' />" class="btn btn-primary btn-lg" role="button" ><h3>LOG OUT</h3></a>
@@ -128,24 +133,7 @@ tr:nth-child(even) {
   </c:forEach>
    </tbody>
 </table>
-<!-- <form action="getAllAddMembers" method="post"></form>
-<table>
-<tbody> 
-  <c:forEach items="${ListOfAllMembers}" var="member"> 
- <tr> 
- 	<td>${member.id}</td>
-    <td>${member.name}</td>
-    <td>${member.yob}</td>
-    <td>${member.gender}</td>
-    <td>${member.idProof}</td>
-    <td>${member.idNumber}</td>
-    <td>${member.vaccineType}</td>
-    <td>${member.dose}</td>
-  </tr>
-  </c:forEach>
-   </tbody>
-   </table>
- -->
+
 	</div>
 	</div>
 </body>
